@@ -4,8 +4,8 @@ from django.urls import reverse_lazy
 from django.views import generic
 from django.contrib.auth.mixins import LoginRequiredMixin
 
-from .forms import DriverCreationForm
-from .models import Driver, Car, Manufacturer
+from taxi.forms import DriverCreationForm, DriverLicenseUpdateForm
+from taxi.models import Driver, Car, Manufacturer
 
 
 @login_required
@@ -93,6 +93,11 @@ class DriverDetailView(LoginRequiredMixin, generic.DetailView):
 class DriverCreateView(LoginRequiredMixin, generic.CreateView):
     model = Driver
     form_class = DriverCreationForm
+
+
+class DriverUpdateView(LoginRequiredMixin, generic.UpdateView):
+    model = Driver
+    form_class = DriverLicenseUpdateForm
 
 
 class DriverDeleteView(LoginRequiredMixin, generic.DeleteView):
