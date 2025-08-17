@@ -116,7 +116,7 @@ class DriverCreateView(LoginRequiredMixin, generic.CreateView):
     form_class = DriverCreationForm
 
 
-class DriverUpdateView(LoginRequiredMixin, generic.UpdateView):
+class DriverLicenseUpdateView(LoginRequiredMixin, generic.UpdateView):
     model = Driver
     form_class = DriverLicenseUpdateForm
 
